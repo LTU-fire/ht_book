@@ -1,0 +1,82 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Heat transfer in fire engineering",
+    "section": "",
+    "text": "Preface\nThis book is under construction, and can therefore be filled with errors. If you find one, please report is as a bug and we will address it as soon as we can.\n\n\n\n\n\n\nFigure 1: Heat on structures",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "chapters/01_introduction.html",
+    "href": "chapters/01_introduction.html",
+    "title": "1  Basic concepts",
+    "section": "",
+    "text": "1.1 Excercises on basic concepts of heat transfer\nExcersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Basic concepts</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_conduction.html",
+    "href": "chapters/02_conduction.html",
+    "title": "2  Conduction",
+    "section": "",
+    "text": "2.1 Excercises on conduction\nExcersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/03_radiation.html",
+    "href": "chapters/03_radiation.html",
+    "title": "3  Radiation",
+    "section": "",
+    "text": "3.1 Excercises on radiation\nInsert excercises here.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Radiation</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/04_convection.html",
+    "href": "chapters/04_convection.html",
+    "title": "4  Convection",
+    "section": "",
+    "text": "4.1 Excersises on convection\nInsert excersises here",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Convection</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/05_boundary.html",
+    "href": "chapters/05_boundary.html",
+    "title": "5  Boundary conditions",
+    "section": "",
+    "text": "5.1 Excercises on boundary conditions in fire engineering\nInsert excersises here.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Boundary conditions</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/06_measurement.html",
+    "href": "chapters/06_measurement.html",
+    "title": "6  Measurements",
+    "section": "",
+    "text": "6.1 Excercises on measurements in fire engineering\nInsert excercises here.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Measurements</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/07_numerical.html",
+    "href": "chapters/07_numerical.html",
+    "title": "7  Numerical temperature calculations",
+    "section": "",
+    "text": "7.1 Excercises on numerical temperature calculations in fire engineering\nInsert excercises here.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Numerical temperature calculations</span>"
+    ]
+  }
+]
