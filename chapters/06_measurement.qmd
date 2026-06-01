@@ -1,3 +1,3 @@
-## Measurements in fire engineering {#sec-measurement}
+## Measurements {#sec-measurement}
 
-{{< include 06_x_measurement.qmd >}}
+{{< include 06_x_exercises.qmd >}}
