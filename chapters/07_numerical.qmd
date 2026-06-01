@@ -1,0 +1,3 @@
+## Numerical temperature calculations in fire engineering {#sec-tempcalc}
+
+{{< include 07_x_numerical.qmd >}}

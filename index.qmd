@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+This book is under construction, and can therefore be filled with errors. If you find one, please report is as a bug and we will address it as soon as we can.
+
+![Heat on structures](figures/dragonLogo.png){#fig-logo}

@@ -1,0 +1,3 @@
+## Excercises on basic concepts of heat transfer {#sec-basicHTx}
+
+Excersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.

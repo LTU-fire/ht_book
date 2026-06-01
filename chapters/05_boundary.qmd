@@ -1,0 +1,3 @@
+## Boundary conditions in fire engineering {#sec-boundary}
+
+{{< include 05_x_excercises.qmd >}}
