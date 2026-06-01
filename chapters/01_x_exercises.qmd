@@ -1,3 +1,47 @@
 ## Excercises on basic concepts of heat transfer {#sec-basicHTx}
 
-Excersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.
+The excersises are created in three levels. The first level consists of exercises to train and automate basic calculations. This level can be revisited at anytime to tune calculational skills. The second level consists of exersises where the skills from the first level needs to connected in order to solve basic fire engineering problems. The third level includes all from the second level but demands more with regards to connecting first- and second level skills. As a complement to these exercises, interactive exercises will be lauched.
+
+### First level skills
+
+#### Steady state conduction
+
+A wall consists of three layers according to table [-@tbl-bht1]
+
+| $d_i$ | Material         | $\lambda_i$ |
+|:-----:|:-----------------|:-------:|
+| [mm]  |                  | [W/mK]  |
+| 20    | Wood board       | 0.14    |
+| 100   | Fibre insulation | 0.04    |
+| 20    | Gypsum board     | 0.5     |
+: {#tbl-bht1}
+
+The temperature on the outer face of the wooden board has a constant temperature of 75°C. The opposing side of the wall has a temperature of 15°C, Calculate the temperaturs at the insulations interface surfaces $T_1$ and $T_2$.
+
+**Solution**
+
+By calculating the total thermal resistance of the wall, $R_{tot}$, it is possible to find intermidiate temperatures using the equation
+
+$$
+T_i = T_0 + \frac{\sum_{j = 0}^{i} R_j}{R_{tot}} \left(T_n - T_0\right)
+$$
+
+$R_{tot}$ is the sum of each of the layers as
+
+$$
+R_{tot} = \sum_{j=0}^{i} R_j = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } W/m
+$$
+
+As $T_0$ = 75°C and $T_n$ = 15°C, the temperatures at each layer interface, $T_1$ and $T_2$ can be calculated as
+
+$$
+T_1 = T_0 + \frac{R_{wood}}{R_{tot}} \left(T_n - T_0 \right) = 
+75 + \frac{\tfrac{0.02}{0.14}}{2.67} \left(15 - 75 \right) = 71.8°C
+$$
+
+and 
+
+$$
+T_2 = T_0 + \frac{R_{wood} + R_{ins}}{R_{tot}} \left(T_n - T_0 \right) = 
+75 + \frac{\tfrac{0.02}{0.14} + \tfrac{0.1}{0.04}}{2.67} \left(15 - 75 \right) = 15.6°C
+$$

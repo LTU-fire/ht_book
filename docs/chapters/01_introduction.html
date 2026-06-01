@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -198,7 +227,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-basicHTx" id="toc-sec-basicHTx" class="nav-link active" data-scroll-target="#sec-basicHTx"><span class="header-section-number">1.1</span> Excercises on basic concepts of heat transfer</a></li>
+  <li><a href="#sec-basicHTx" id="toc-sec-basicHTx" class="nav-link active" data-scroll-target="#sec-basicHTx"><span class="header-section-number">1.1</span> Excercises on basic concepts of heat transfer</a>
+  <ul class="collapse">
+  <li><a href="#first-level-skills" id="toc-first-level-skills" class="nav-link" data-scroll-target="#first-level-skills"><span class="header-section-number">1.1.1</span> First level skills</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/LTU-fire/ht-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -226,9 +258,76 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sec-basicHTx" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="sec-basicHTx"><span class="header-section-number">1.1</span> Excercises on basic concepts of heat transfer</h2>
-<p>Excersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.</p>
+<p>The excersises are created in three levels. The first level consists of exercises to train and automate basic calculations. This level can be revisited at anytime to tune calculational skills. The second level consists of exersises where the skills from the first level needs to connected in order to solve basic fire engineering problems. The third level includes all from the second level but demands more with regards to connecting first- and second level skills. As a complement to these exercises, interactive exercises will be lauched.</p>
+<section id="first-level-skills" class="level3" data-number="1.1.1">
+<h3 data-number="1.1.1" class="anchored" data-anchor-id="first-level-skills"><span class="header-section-number">1.1.1</span> First level skills</h3>
+<section id="steady-state-conduction" class="level4" data-number="1.1.1.1">
+<h4 data-number="1.1.1.1" class="anchored" data-anchor-id="steady-state-conduction"><span class="header-section-number">1.1.1.1</span> Steady state conduction</h4>
+<p>A wall consists of three layers according to table <a href="#tbl-bht1" class="quarto-xref"><span>1.1</span></a></p>
+<div id="tbl-bht1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-bht1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.1
+</figcaption>
+<div aria-describedby="tbl-bht1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(d_i\)</span></th>
+<th style="text-align: left;">Material</th>
+<th style="text-align: center;"><span class="math inline">\(\lambda_i\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">[mm]</td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;">[W/mK]</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Wood board</td>
+<td style="text-align: center;">0.14</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Fibre insulation</td>
+<td style="text-align: center;">0.04</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">20</td>
+<td style="text-align: left;">Gypsum board</td>
+<td style="text-align: center;">0.5</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>The temperature on the outer face of the wooden board has a constant temperature of 75°C. The opposing side of the wall has a temperature of 15°C, Calculate the temperaturs at the insulations interface surfaces <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span>.</p>
+<p><strong>Solution</strong></p>
+<p>By calculating the total thermal resistance of the wall, <span class="math inline">\(R_{tot}\)</span>, it is possible to find intermidiate temperatures using the equation</p>
+<p><span class="math display">\[
+T_i = T_0 + \frac{\sum_{j = 0}^{i} R_j}{R_{tot}} \left(T_n - T_0\right)
+\]</span></p>
+<p><span class="math inline">\(R_{tot}\)</span> is the sum of each of the layers as</p>
+<p><span class="math display">\[
+R_{tot} = \sum_{j=0}^{i} R_j = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } W/m
+\]</span></p>
+<p>As <span class="math inline">\(T_0\)</span> = 75°C and <span class="math inline">\(T_n\)</span> = 15°C, the temperatures at each layer interface, <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span> can be calculated as</p>
+<p><span class="math display">\[
+T_1 = T_0 + \frac{R_{wood}}{R_{tot}} \left(T_n - T_0 \right) =
+75 + \frac{\tfrac{0.02}{0.14}}{2.67} \left(15 - 75 \right) = 71.8°C
+\]</span></p>
+<p>and</p>
+<p><span class="math display">\[
+T_2 = T_0 + \frac{R_{wood} + R_{ins}}{R_{tot}} \left(T_n - T_0 \right) =
+75 + \frac{\tfrac{0.02}{0.14} + \tfrac{0.1}{0.04}}{2.67} \left(15 - 75 \right) = 15.6°C
+\]</span></p>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
