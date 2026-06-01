@@ -1,3 +1,0 @@
-## Excercises on boundary conditions in fire engineering {#sec-boundaryx}
-
-Insert excersises here.

@@ -1,3 +1,0 @@
-## Measurements {#sec-measurement}
-
-{{< include 06_x_exercises.qmd >}}

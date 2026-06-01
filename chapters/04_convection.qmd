@@ -1,4 +1,0 @@
-## Convection {#sec-convection}
-
-{{< include 04_x_exercises.qmd >}}
-

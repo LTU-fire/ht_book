@@ -1,3 +1,0 @@
-## Radiation {#sec-radiation}
-
-{{< include 03_x_exercises.qmd >}} 

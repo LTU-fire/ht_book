@@ -1,3 +1,0 @@
-## Excercises on numerical temperature calculations in fire engineering {#sec-tempcalcx}
-
-Insert excercises here.

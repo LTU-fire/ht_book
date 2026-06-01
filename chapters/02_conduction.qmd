@@ -1,3 +1,0 @@
-## Conduction {#sec-conduction}
-
-{{< include 02_x_exercises.qmd >}}
