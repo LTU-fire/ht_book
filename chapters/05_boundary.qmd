@@ -1,0 +1,3 @@
+## Boundary conditions {#sec-boundary}
+
+{{< include 05_x_exercises.qmd >}}

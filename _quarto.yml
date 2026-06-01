@@ -1,0 +1,37 @@
+project:
+  type: book
+  output-dir: docs
+
+number-sections: true
+
+book:
+  title: "Heat transfer in fire engineering"
+  author: "Rhoda Mensah Komeng, Joakim Sandström, Solomon Asante-Okyere, LTU"
+  
+  repo-url: https://github.com/LTU-fire/ht-book/
+  repo-subdir: chapters
+  repo-branch: main
+  repo-actions: [issue]
+  url: https://LTU-fire.github.io/ht-book/
+  sidebar:
+    logo: figures/dragonLogo.png
+    search: true
+  sharing: [twitter, facebook, linkedin]
+
+  chapters:
+    - index.qmd
+    - chapters/01_introduction.qmd
+    - chapters/02_conduction.qmd
+    - chapters/03_radiation.qmd
+    - chapters/04_convection.qmd
+    - chapters/05_boundary.qmd
+    - chapters/06_measurement.qmd
+    - chapters/07_numerical.qmd
+
+  
+format:
+  html:
+    theme: cosmo
+
+execute:
+  freeze: auto 

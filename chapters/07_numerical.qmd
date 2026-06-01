@@ -1,0 +1,3 @@
+## Numerical temperature calculations {#sec-tempcalc}
+
+{{< include 07_x_exercises.qmd >}}
