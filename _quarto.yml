@@ -32,9 +32,6 @@ book:
 format:
   html:
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
-    fontfamily: Garamond
 
 execute:
   freeze: auto 
