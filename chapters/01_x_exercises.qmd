@@ -102,7 +102,7 @@ $$
 In this case, $T_0$ = $T_in$, $T_n$ = $T_f$, and $R_{tot}$ is the total resistance of the pipe including the thermal resistance of both sides.
 
 $$
-R_{tot} = R_{in} + R_{s} + R_{i} + R_{o} = \frac{1}{2\pi}\left(\frac{1}{r_i h_{in}} + \frac{\ln\left(r_{o,s}/r_{i,s}\right)}{\lambda_{s}} + \frac{\ln\left(r_{o,i}/r_{i,i}\right)}{\lambda_{i}} + \frac{1}{r_{o,i} h_{out}}\right) \approx 0.41 \text{ } m²K/W
+R_{tot} = R_{in} + R_{s} + R_{i} + R_{out} = \frac{1}{2\pi}\left(\frac{1}{r_i h_{in}} + \frac{\ln\left(r_{o,s}/r_{i,s}\right)}{\lambda_{s}} + \frac{\ln\left(r_{o,i}/r_{i,i}\right)}{\lambda_{i}} + \frac{1}{r_{o,i} h_{out}}\right) \approx 0.41 \text{ } m²K/W
 $$
 
 As $T_{in}$ = 100°C and $T_f$ = 800°C, the temperatures at the surface, $T_1$, can be calculated as
@@ -115,7 +115,7 @@ $$
 An alternative way to calculate the surface temperature is by using
 
 $$
-T_1 = \frac{R_h T_2 + \left(R_s + R_i + R_o\right) T_g}{R_{tot}} = 197.3°C
+T_1 = \frac{R_{in} T_2 + \left(R_s + R_i + R_{out}\right) T_g}{R_{tot}} = 197.3°C
 $$
 
 Both solutions yield the same result and are proper to use.
