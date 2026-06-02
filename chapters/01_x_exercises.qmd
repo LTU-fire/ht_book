@@ -8,9 +8,8 @@ The excersises are created in three levels. The first level consists of exercise
 
 A wall consists of three layers according to table [-@tbl-bht1]
 
-| $d_i$ | Material         | $\lambda_i$ |
+| $d_i$ [mm]  | Material         | $\lambda_i$ [W/mK] |
 |:-----:|:-----------------|:-------:|
-| [mm]  |                  | [W/mK]  |
 | 20    | Wood board       | 0.14    |
 | 100   | Fibre insulation | 0.04    |
 | 20    | Gypsum board     | 0.5     |
@@ -29,7 +28,7 @@ $$
 $R_{tot}$ is the sum of each of the layers as
 
 $$
-R_{tot} = \sum_{j=0}^{i} R_j = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } W/m
+R_{tot} = \sum_{j=0}^{i} R_j = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } m²K/W
 $$
 
 As $T_0$ = 75°C and $T_n$ = 15°C, the temperatures at each layer interface, $T_1$ and $T_2$ can be calculated as
@@ -45,3 +44,43 @@ $$
 T_2 = T_0 + \frac{R_{wood} + R_{ins}}{R_{tot}} \left(T_n - T_0 \right) = 
 75 + \frac{\tfrac{0.02}{0.14} + \tfrac{0.1}{0.04}}{2.67} \left(15 - 75 \right) = 15.6°C
 $$
+
+#### Surface temperature
+
+Calculate the surface temperature, $T_1$.
+
+| $d_i$ [mm]  | Material         | $\lambda_i$ [W/mK] |
+|:-----:|:-----------------|:-------:|
+| 12    | Wood board       | 0.2    |
+: {#tbl-bht2}
+
+Assume the heat transfer coefficient, $h_{tot}$, equal to 5 W/m²K for the exposed side and a constant temperature on the unexposed side, $T_2$, equal to 20°C.
+
+**Solution**
+
+By calculating the total thermal resistance of the wall, $R_{tot}$, it is possible to find intermidiate temperatures using the equation
+
+$$
+T_i = T_0 + \frac{\sum_{j = 0}^{i} R_j}{R_{tot}} \left(T_n - T_0\right)
+$$
+
+In this case, $T_0$ = $T_g$, $T_n$ = $T_2$, and $R_{tot}$ is the total resistance of the wall including the heat transfer coefficient on the exposed side.
+
+$$
+R_{tot} = R_{h} + R_{k} = \frac{1}{h_{tot}} + \frac{l_{wood}}{\lambda_{wood}} = \frac{0.1}{5} + \frac{0.02}{0.14} = 0.26 \text{ } m²K/W
+$$
+
+As $T_g$ = 100°C and $T_2$ = 20°C, the temperatures at the surface, $T_1$, can be calculated as
+
+$$
+T_1 = T_g + \frac{R_{h}}{R_{tot}} \left(T_2 - T_g \right) = 
+75 + \frac{\tfrac{1}{5}}{0.26} \left(20 - 100 \right) = 38.5°C
+$$
+
+An alternative way to calculate the surface temperature is by using
+
+$$
+T_1 = \frac{R_h T_2 + R_k T_g}{R_{h} + R_k} = 38.5°C
+$$
+
+Both solutions yield the same result and are proper to use.
