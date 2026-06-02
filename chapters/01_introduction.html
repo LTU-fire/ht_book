@@ -273,28 +273,23 @@ Table&nbsp;1.1
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: center;"><span class="math inline">\(d_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(d_i\)</span> [mm]</th>
 <th style="text-align: left;">Material</th>
-<th style="text-align: center;"><span class="math inline">\(\lambda_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(\lambda_i\)</span> [W/mK]</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">[mm]</td>
-<td style="text-align: left;"></td>
-<td style="text-align: center;">[W/mK]</td>
-</tr>
-<tr class="even">
 <td style="text-align: center;">20</td>
 <td style="text-align: left;">Wood board</td>
 <td style="text-align: center;">0.14</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: center;">100</td>
 <td style="text-align: left;">Fibre insulation</td>
 <td style="text-align: center;">0.04</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: center;">20</td>
 <td style="text-align: left;">Gypsum board</td>
 <td style="text-align: center;">0.5</td>
@@ -312,7 +307,7 @@ T_i = T_0 + \frac{\sum_{j = 0}^{i} R_j}{R_{tot}} \left(T_n - T_0\right)
 \]</span></p>
 <p><span class="math inline">\(R_{tot}\)</span> is the sum of each of the layers as</p>
 <p><span class="math display">\[
-R_{tot} = \sum_{j=0}^{i} R_j = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } W/m
+R_{tot} = \sum_{j=0}^{i} R_j = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } m²K/W
 \]</span></p>
 <p>As <span class="math inline">\(T_0\)</span> = 75°C and <span class="math inline">\(T_n\)</span> = 15°C, the temperatures at each layer interface, <span class="math inline">\(T_1\)</span> and <span class="math inline">\(T_2\)</span> can be calculated as</p>
 <p><span class="math display">\[
@@ -324,6 +319,55 @@ T_1 = T_0 + \frac{R_{wood}}{R_{tot}} \left(T_n - T_0 \right) =
 T_2 = T_0 + \frac{R_{wood} + R_{ins}}{R_{tot}} \left(T_n - T_0 \right) =
 75 + \frac{\tfrac{0.02}{0.14} + \tfrac{0.1}{0.04}}{2.67} \left(15 - 75 \right) = 15.6°C
 \]</span></p>
+</section>
+<section id="surface-temperature" class="level4" data-number="1.1.1.2">
+<h4 data-number="1.1.1.2" class="anchored" data-anchor-id="surface-temperature"><span class="header-section-number">1.1.1.2</span> Surface temperature</h4>
+<p>Calculate the surface temperature, <span class="math inline">\(T_1\)</span>.</p>
+<div id="tbl-bht2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-bht2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1.2
+</figcaption>
+<div aria-describedby="tbl-bht2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(d_i\)</span> [mm]</th>
+<th style="text-align: left;">Material</th>
+<th style="text-align: center;"><span class="math inline">\(\lambda_i\)</span> [W/mK]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">12</td>
+<td style="text-align: left;">Wood board</td>
+<td style="text-align: center;">0.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Assume the heat transfer coefficient, <span class="math inline">\(h_{tot}\)</span>, equal to 5 W/m²K for the exposed side and a constant temperature on the unexposed side, <span class="math inline">\(T_2\)</span>, equal to 20°C.</p>
+<p><strong>Solution</strong></p>
+<p>By calculating the total thermal resistance of the wall, <span class="math inline">\(R_{tot}\)</span>, it is possible to find intermidiate temperatures using the equation</p>
+<p><span class="math display">\[
+T_i = T_0 + \frac{\sum_{j = 0}^{i} R_j}{R_{tot}} \left(T_n - T_0\right)
+\]</span></p>
+<p>In this case, <span class="math inline">\(T_0\)</span> = <span class="math inline">\(T_g\)</span>, <span class="math inline">\(T_n\)</span> = <span class="math inline">\(T_2\)</span>, and <span class="math inline">\(R_{tot}\)</span> is the total resistance of the wall including the heat transfer coefficient on the exposed side.</p>
+<p><span class="math display">\[
+R_{tot} = R_{h} + R_{k} = \frac{1}{h_{tot}} + \frac{l_{wood}}{\lambda_{wood}} = \frac{0.1}{5} + \frac{0.02}{0.14} = 0.26 \text{ } m²K/W
+\]</span></p>
+<p>As <span class="math inline">\(T_g\)</span> = 100°C and <span class="math inline">\(T_2\)</span> = 20°C, the temperatures at the surface, <span class="math inline">\(T_1\)</span>, can be calculated as</p>
+<p><span class="math display">\[
+T_1 = T_g + \frac{R_{h}}{R_{tot}} \left(T_2 - T_g \right) =
+75 + \frac{\tfrac{1}{5}}{0.26} \left(20 - 100 \right) = 38.5°C
+\]</span></p>
+<p>An alternative way to calculate the surface temperature is by using</p>
+<p><span class="math display">\[
+T_1 = \frac{R_h T_2 + R_k T_g}{R_{h} + R_k} = 38.5°C
+\]</span></p>
+<p>Both solutions yield the same result and are proper to use.</p>
 
 
 </section>
