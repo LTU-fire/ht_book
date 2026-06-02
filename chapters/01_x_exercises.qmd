@@ -28,7 +28,7 @@ $$
 $R_{tot}$ is the sum of each of the layers as
 
 $$
-R_{tot} = \sum_{j=0}^{i} R_j = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } m²K/W
+R_{tot} = R_{wood} + R_{ins} + R_{gyp} = \frac{l_{wood}}{\lambda_{wood}} + \frac{l_{ins}}{\lambda_{ins}} + \frac{l_{gyp}}{\lambda_{gyp}} = \frac{0.02}{0.14} + \frac{0.1}{0.04} + \frac{0.12}{0.5} = 2.67 \text{ } m²K/W
 $$
 
 As $T_0$ = 75°C and $T_n$ = 15°C, the temperatures at each layer interface, $T_1$ and $T_2$ can be calculated as
@@ -85,14 +85,11 @@ Both solutions yield the same result and are proper to use.
 
 #### Cylinder temperature
 
-Assume an insulated steel pipe with a liquid medium of the temperature, $T_{in} = 100°C$. The pipe is exposed from the outside by a temperature, $T_f$ = 800°C. The inner heat transfer coefficient, $h_{in}$ = 100 W/m²K for the exposed outside, $h_out$ = 50 W/m²K. The conductivity of steel, $\lambda_s$ = 45 W/mK and the conductivity of the insulation, $\lambda_i$ = 0.5 W/mK. Calculate the temperature of the steel pipe, $T_1$.
+Assume an insulated steel pipe with a liquid medium of the temperature, $T_{in} = 100°C$. The pipe is exposed from the outside by a temperature, $T_f$ = 800°C. The inner heat transfer coefficient, $h_{in}$ = 100 W/m²K for the exposed outside, $h_{out}$ = 50 W/m²K. The conductivity of steel, $\lambda_s$ = 45 W/mK and the conductivity of the insulation, $\lambda_i$ = 0.5 W/mK. Calculate the temperature of the steel pipe, $T_1$.
 
-::: 
-- Inner radius, $r_i$ = 28 mm
-- Steel thickness, $d_s$ = 2 mm
-- Insulation thickness, $d_i$ = 50 mm
-:::
-
+* Inner radius, $r_i$ = 28 mm
+* Steel thickness, $d_s$ = 2 mm
+* Insulation thickness, $d_i$ = 50 mm
 
 **Solution**
 
@@ -105,14 +102,14 @@ $$
 In this case, $T_0$ = $T_in$, $T_n$ = $T_f$, and $R_{tot}$ is the total resistance of the pipe including the thermal resistance of both sides.
 
 $$
-R_{tot} = R_{in} + R_{s} + R_{i} + R_{o} = \frac{1}{2\pi}\left(\frac{1}{r_i h_{in}} + \frac{\ln\left(r_{o,s}/r_{i,s}\right)}{\lambda_{s}} + \frac{\ln\left(r_{o,i}/r_{i,i}\right)}{\lambda_{i}} + \frac{1}{r_i h_{in}}\right) \approx 0.41 \text{ } m²K/W
+R_{tot} = R_{in} + R_{s} + R_{i} + R_{o} = \frac{1}{2\pi}\left(\frac{1}{r_i h_{in}} + \frac{\ln\left(r_{o,s}/r_{i,s}\right)}{\lambda_{s}} + \frac{\ln\left(r_{o,i}/r_{i,i}\right)}{\lambda_{i}} + \frac{1}{r_{o,i} h_{out}}\right) \approx 0.41 \text{ } m²K/W
 $$
 
-As $T_in$ = 100°C and $T_f$ = 800°C, the temperatures at the surface, $T_1$, can be calculated as
+As $T_{in}$ = 100°C and $T_f$ = 800°C, the temperatures at the surface, $T_1$, can be calculated as
 
 $$
-T_1 = T_in + \frac{R_{in}}{R_{tot}} \left(T_f - T_in \right) = 
-75 + \frac{\tfrac{1}{100}}{0.41} \left(800 - 100 \right) = 197.3°C
+T_1 = T_{in} + \frac{R_{in}}{R_{tot}} \left(T_f - T_{in} \right) = 
+100 + \frac{\tfrac{1}{2\pi 0.0028 \cdot 100}}{0.41} \left(800 - 100 \right) = 197.3°C
 $$
 
 An alternative way to calculate the surface temperature is by using
