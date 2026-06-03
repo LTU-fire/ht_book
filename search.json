@@ -34,7 +34,17 @@
     "href": "chapters/02_conduction.html",
     "title": "2  Conduction",
     "section": "",
-    "text": "2.1 Excercises on conduction\nExcersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.",
+    "text": "2.1 Excercises on conduction",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conduction</span>"
+    ]
+  },
+  {
+    "objectID": "chapters/02_conduction.html#sec-conductionx",
+    "href": "chapters/02_conduction.html#sec-conductionx",
+    "title": "2  Conduction",
+    "section": "",
+    "text": "2.1.1 Steel plate thermal constant\nA 2 mm steel plate with an initial tempeprature, \\(T_i\\) = 20°C is suddelnly exposed on both sides to a gas temperature, \\(T_f\\) = 500°C. Assume a constant heat transfer coefficent, \\(h\\) = 20 W/m²K and the steel properties \\(c\\) = 460 J/kgK and \\(\\rho\\) = 7850 kg/m³.\n\nCalculate the thermal time constant of the steel plate.\nCalculate the temperature of the steel plate after 5 min.\n\nSolution\n\nThe thermal time constant is calculated according to\n\n\\[\n\\tau = \\frac{dc\\rho}{h} = \\frac{\\tfrac{0.002}{2}460\\cdot 7850}{20} = 181 s\n\\]\nnote that the thickness, \\(d\\), is divided by half as the plate is exposed on both sides.\n\nAt time \\(t\\) = 300 , the steel temperature is then calculated as\n\n\\[\nT_s = T_i + \\left( T_f - T_i \\right) \\left( 1 - e^{-\\tfrac{t}{\\tau}} \\right) = 20 + \\left( 500 - 20 \\right)\\left( 1 - e^{-\\tfrac{300}{181}} \\right) = 409°C\n\\]",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Conduction</span>"
     ]

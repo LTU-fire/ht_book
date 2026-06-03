@@ -73,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -198,7 +227,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#sec-conductionx" id="toc-sec-conductionx" class="nav-link active" data-scroll-target="#sec-conductionx"><span class="header-section-number">2.1</span> Excercises on conduction</a></li>
+  <li><a href="#sec-conductionx" id="toc-sec-conductionx" class="nav-link active" data-scroll-target="#sec-conductionx"><span class="header-section-number">2.1</span> Excercises on conduction</a>
+  <ul class="collapse">
+  <li><a href="#steel-plate-thermal-constant" id="toc-steel-plate-thermal-constant" class="nav-link" data-scroll-target="#steel-plate-thermal-constant"><span class="header-section-number">2.1.1</span> Steel plate thermal constant</a></li>
+  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/LTU-fire/ht-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -226,9 +258,30 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="sec-conductionx" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="sec-conductionx"><span class="header-section-number">2.1</span> Excercises on conduction</h2>
-<p>Excersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.</p>
+<section id="steel-plate-thermal-constant" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="steel-plate-thermal-constant"><span class="header-section-number">2.1.1</span> Steel plate thermal constant</h3>
+<p>A 2 mm steel plate with an initial tempeprature, <span class="math inline">\(T_i\)</span> = 20°C is suddelnly exposed on both sides to a gas temperature, <span class="math inline">\(T_f\)</span> = 500°C. Assume a constant heat transfer coefficent, <span class="math inline">\(h\)</span> = 20 W/m²K and the steel properties <span class="math inline">\(c\)</span> = 460 J/kgK and <span class="math inline">\(\rho\)</span> = 7850 kg/m³.</p>
+<ol type="a">
+<li>Calculate the thermal time constant of the steel plate.</li>
+<li>Calculate the temperature of the steel plate after 5 min.</li>
+</ol>
+<p><strong>Solution</strong></p>
+<ol type="a">
+<li>The thermal time constant is calculated according to</li>
+</ol>
+<p><span class="math display">\[
+\tau = \frac{dc\rho}{h} = \frac{\tfrac{0.002}{2}460\cdot 7850}{20} = 181 s
+\]</span></p>
+<p>note that the thickness, <span class="math inline">\(d\)</span>, is divided by half as the plate is exposed on both sides.</p>
+<ol start="2" type="a">
+<li>At time <span class="math inline">\(t\)</span> = 300 , the steel temperature is then calculated as</li>
+</ol>
+<p><span class="math display">\[
+T_s = T_i + \left( T_f - T_i \right) \left( 1 - e^{-\tfrac{t}{\tau}} \right) = 20 + \left( 500 - 20 \right)\left( 1 - e^{-\tfrac{300}{181}} \right) = 409°C
+\]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
