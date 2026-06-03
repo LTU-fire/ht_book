@@ -230,6 +230,8 @@ window.Quarto = {
   <li><a href="#sec-conductionx" id="toc-sec-conductionx" class="nav-link active" data-scroll-target="#sec-conductionx"><span class="header-section-number">2.1</span> Excercises on conduction</a>
   <ul class="collapse">
   <li><a href="#steel-plate-thermal-constant" id="toc-steel-plate-thermal-constant" class="nav-link" data-scroll-target="#steel-plate-thermal-constant"><span class="header-section-number">2.1.1</span> Steel plate thermal constant</a></li>
+  <li><a href="#steel-bulkhead" id="toc-steel-bulkhead" class="nav-link" data-scroll-target="#steel-bulkhead"><span class="header-section-number">2.1.2</span> Steel bulkhead</a></li>
+  <li><a href="#thermal-penetration-depth" id="toc-thermal-penetration-depth" class="nav-link" data-scroll-target="#thermal-penetration-depth"><span class="header-section-number">2.1.3</span> Thermal penetration depth</a></li>
   </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/LTU-fire/ht-book/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
@@ -278,6 +280,112 @@ window.Quarto = {
 </ol>
 <p><span class="math display">\[
 T_s = T_i + \left( T_f - T_i \right) \left( 1 - e^{-\tfrac{t}{\tau}} \right) = 20 + \left( 500 - 20 \right)\left( 1 - e^{-\tfrac{300}{181}} \right) = 409°C
+\]</span></p>
+</section>
+<section id="steel-bulkhead" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="steel-bulkhead"><span class="header-section-number">2.1.2</span> Steel bulkhead</h3>
+<p>A 5 mm steel bulkhead is suddenly exposed to a fire. It is insulated on the fire-exposed side and unisulated on the unexposed side.</p>
+<p>Boundary conditions on the fire-exposed side * Temperature, <span class="math inline">\(T_f\)</span> = 1000°C * Heat transfer coefficient negligable (assume <span class="math inline">\(T_s\)</span> = <span class="math inline">\(T_f\)</span>)</p>
+<div id="tbl-bht1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl quarto-uncaptioned" id="tbl-bht1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1
+</figcaption>
+<div aria-describedby="tbl-bht1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 36%">
+<col style="width: 18%">
+<col style="width: 16%">
+<col style="width: 16%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(d_i\)</span> [mm]</th>
+<th style="text-align: left;">Material</th>
+<th style="text-align: center;"><span class="math inline">\(\lambda\)</span> [W/mK]</th>
+<th style="text-align: center;"><span class="math inline">\(c\)</span> [J/kgK]</th>
+<th style="text-align: center;"><span class="math inline">\(\rho\)</span> [kg/m³]</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">100</td>
+<td style="text-align: left;">Insulation</td>
+<td style="text-align: center;">0.07</td>
+<td style="text-align: center;">-</td>
+<td style="text-align: center;">-</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Steel</td>
+<td style="text-align: center;">0.04</td>
+<td style="text-align: center;">460</td>
+<td style="text-align: center;">7850</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Boundary conditions on the unexposed side * Temperature, <span class="math inline">\(T_\infty\)</span> = 20°C * Heat transfer coefficient <span class="math inline">\(h\)</span> = 5 W/m²K</p>
+<p>What is the ultimate steel temperature, <span class="math inline">\(T_s^{ult}\)</span>?</p>
+<p><strong>Solution</strong></p>
+<ol type="a">
+<li><span class="math inline">\(T_s^{ult}\)</span> can be found when the temperature change is zero. This occurs when the heat entering the steel equal the heat exiting.</li>
+</ol>
+<p>The heat entering the steel can be described as the heat passing through the insulation,</p>
+<p><span class="math display">\[
+\dot{q}_{in}^{''}=\frac{\lambda_s}{d_s}\left(T_f - T_s\right)
+\]</span></p>
+<p>The heat exiting the steel can be described as</p>
+<p><span class="math display">\[
+\dot{q}_{out}^{''}=h\left(T_{\infty} - T_s)
+\]</span></p>
+<p>These two are equal when <span class="math inline">\(T_s\)</span> = <span class="math inline">\(T_s^{ult}\)</span>. This can be found by using</p>
+<p><span class="math display">\[
+T_s^{ult}=\frac{\tfrac{k}{d}T_f + hT_{\infty}}{\tfrac{k}{f} + h} =
+\frac{\tfrac{0.07}{0.1}1000 + 5\cdot 20}{\tfrac{0.07}{0.1} + 5} = 140°C
+\]</span></p>
+</section>
+<section id="thermal-penetration-depth" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="thermal-penetration-depth"><span class="header-section-number">2.1.3</span> Thermal penetration depth</h3>
+<p>The surface temperature of a thick concrete wall with an initial temperature of 0°C rises suddely to 1000°C.</p>
+<ol type="a">
+<li>What is the 1 % thermal penetration depth, <span class="math inline">\(\delta_{0.01}\)</span>, after 15 minutes?</li>
+<li>What is the temperature, <span class="math inline">\(T\)</span> at that point after 60 minutes?</li>
+</ol>
+<p>Assume the thermal properties of the concrete to be</p>
+<ul>
+<li><span class="math inline">\(c\)</span> = 900 J/kgK</li>
+<li><span class="math inline">\(\rho\)</span> = 2300 kg/m³</li>
+<li><span class="math inline">\(\lambda\)</span> = 1.5 W/mK</li>
+</ul>
+<p><strong>Solution</strong></p>
+<ol type="a">
+<li>By calculating</li>
+</ol>
+<p><span class="math display">\[
+\alpha = \frac{\lambda}{c \rho} = \frac{1.5}{900 \cdot 2300} = 7.25 \cdot 10^{-7}
+\]</span></p>
+<p>The penetration depth after 15 minutes (900 s) can be calculated using</p>
+<p><span class="math display">\[
+\delta_{0.01} = 3.6 \sqrt{\alpha t} = 3.6 \sqrt{7.25 \cdot 10^{-7} \cdot 900} = 0.092 m
+\]</span></p>
+<ol start="2" type="a">
+<li>The temperature after 60 minutes at the depth <span class="math inline">\(x\)</span> = <span class="math inline">\(\delta_{0.01}\)</span> is calcualted using</li>
+</ol>
+<p><span class="math display">\[
+\frac{T - T_i}{T_s - T_s} = erfc\left(\eta \right)
+\]</span></p>
+<p><span class="math inline">\(\eta\)</span> as</p>
+<p><span class="math display">\[
+\eta = \frac{x}{2\sqrt{\alpha t}} = \frac{0.092}{2 \sqrt{7.25 \cdot 10^{-7} \cdot 3600}} = 0.90
+\]</span></p>
+<p>The temperature rise can be calculated by rearranging the first equation for the relative temperature rise in semi-infinite solids with a sudden rise in surface temperature to</p>
+<p><span class="math display">\[
+T = T_i + erfc\left(\eta\right)\left(T_s - T_i \right) = 0 + erfc\left(0.90\right)\left(1000 - 0\right) = 202.8°C
 \]</span></p>
 
 
