@@ -1,3 +1,24 @@
 ## Excercises on conduction {#sec-conductionx}
 
-Excersices in here. Start with ### and the name of the excercies. If needed create a file per excercise and import it. This way, this file might get less cluttered. Import is done as illustrated in 01_introduction.qmd.
+### Steel plate thermal constant
+
+A 2 mm steel plate with an initial tempeprature, $T_i$ = 20°C is suddelnly exposed on both sides to a gas temperature, $T_f$ = 500°C. Assume a constant heat transfer coefficent, $h$ = 20 W/m²K and the steel properties $c$ = 460 J/kgK and $\rho$ = 7850 kg/m³.
+
+(a) Calculate the thermal time constant of the steel plate.
+(b) Calculate the temperature of the steel plate after 5 min.
+
+**Solution**
+
+(a) The thermal time constant is calculated according to
+
+$$
+\tau = \frac{dc\rho}{h} = \frac{\tfrac{0.002}{2}460\cdot 7850}{20} = 181 s
+$$
+
+note that the thickness, $d$, is divided by half as the plate is exposed on both sides.
+
+(b) At time $t$ = 300 , the steel temperature is then calculated as
+
+$$
+T_s = T_i + \left( T_f - T_i \right) \left( 1 - e^{-\tfrac{t}{\tau}} \right) = 20 + \left( 500 - 20 \right)\left( 1 - e^{-\tfrac{300}{181}} \right) = 409°C
+$$
