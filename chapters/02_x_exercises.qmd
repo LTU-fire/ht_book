@@ -22,3 +22,94 @@ note that the thickness, $d$, is divided by half as the plate is exposed on both
 $$
 T_s = T_i + \left( T_f - T_i \right) \left( 1 - e^{-\tfrac{t}{\tau}} \right) = 20 + \left( 500 - 20 \right)\left( 1 - e^{-\tfrac{300}{181}} \right) = 409°C
 $$
+
+### Steel bulkhead
+
+A 5 mm steel bulkhead is suddenly exposed to a fire. It is insulated on the fire-exposed side and unisulated on the unexposed side. 
+
+Boundary conditions on the fire-exposed side
+* Temperature, $T_f$ = 1000°C
+* Heat transfer coefficient negligable (assume $T_s$ = $T_f$) 
+
+| $d_i$ [mm]  | Material         | $\lambda$ [W/mK] | $c$ [J/kgK] | $\rho$ [kg/m³] |
+|:-----:|:-----------------|:-------:|:------:|:------:|
+| 100   | Insulation       | 0.07    |    -   |   -    |
+| 5     | Steel            | 0.04    | 460    | 7850   |
+: {#tbl-bht1}
+
+Boundary conditions on the unexposed side
+* Temperature, $T_\infty$ = 20°C
+* Heat transfer coefficient $h$ = 5 W/m²K 
+
+What is the ultimate steel temperature, $T_s^{ult}$?
+
+**Solution**
+
+(a) $T_s^{ult}$ can be found when the temperature change is zero. This occurs when the heat entering the steel equal the heat exiting.
+
+The heat entering the steel can be described as the heat passing through the insulation, 
+
+$$
+\dot{q}_{in}^{''}=\frac{\lambda_s}{d_s}\left(T_f - T_s\right)
+$$
+
+The heat exiting the steel can be described as
+
+$$
+\dot{q}_{out}^{''}=h\left(T_{\infty} - T_s) 
+$$
+
+These two are equal when $T_s$ = $T_s^{ult}$. This can be found by using 
+
+$$
+T_s^{ult}=\frac{\tfrac{k}{d}T_f + hT_{\infty}}{\tfrac{k}{f} + h} = 
+\frac{\tfrac{0.07}{0.1}1000 + 5\cdot 20}{\tfrac{0.07}{0.1} + 5} = 140°C
+$$
+
+### Thermal penetration depth
+
+The surface temperature of a thick concrete wall with an initial temperature of 0°C rises suddely to 1000°C.
+
+(a) What is the 1 % thermal penetration depth, $\delta_{0.01}$, after 15 minutes?
+(b) What is the temperature, $T$ at that point after 60 minutes?
+
+Assume the thermal properties of the concrete to be 
+
+* $c$ = 900 J/kgK
+* $\rho$ = 2300 kg/m³
+* $\lambda$ = 1.5 W/mK
+
+**Solution**
+
+(a) By calculating 
+
+$$
+\alpha = \frac{\lambda}{c \rho} = \frac{1.5}{900 \cdot 2300} = 7.25 \cdot 10^{-7}
+$$
+
+The penetration depth after 15 minutes (900 s) can be calculated using
+
+$$
+\delta_{0.01} = 3.6 \sqrt{\alpha t} = 3.6 \sqrt{7.25 \cdot 10^{-7} \cdot 900} = 0.092 m
+$$
+
+
+(b) The temperature after 60 minutes at the depth $x$ = $\delta_{0.01}$ is calcualted using
+
+$$
+\frac{T - T_i}{T_s - T_s} = erfc\left(\eta \right)
+$$
+
+$\eta$ as
+
+$$
+\eta = \frac{x}{2\sqrt{\alpha t}} = \frac{0.092}{2 \sqrt{7.25 \cdot 10^{-7} \cdot 3600}} = 0.90
+$$
+
+The temperature rise can be calculated by rearranging the first equation for the relative temperature rise in semi-infinite solids with a sudden rise in surface temperature to
+
+$$
+T = T_i + erfc\left(\eta\right)\left(T_s - T_i \right) = 0 + erfc\left(0.90\right)\left(1000 - 0\right) = 202.8°C
+$$
+
+
