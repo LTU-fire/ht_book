@@ -113,3 +113,73 @@ T = T_i + erfc\left(\eta\right)\left(T_s - T_i \right) = 0 + erfc\left(0.90\righ
 $$
 
 
+### Rebar temperature
+
+A 300 mm thick concrete slab has reinforcement bars at a depth of 30 mm from the bottom surface. The slab is suddelnly exposed from below by a fire having a constant temperature of $T_f$ = 900°C. Assume the initial temperature of the slab, $T_$ = 20°C, and the termal conductivity of the concrete, $\lambda$ = 1.0 W/mK, density, $\rho$ = 2300 kg/m³, and the specific heat capacity, $c$ = 800 J/kgK.
+
+(a) What is the surface temperature, $T_0$, of the slab after 10 min of fire exposure? Assume the total heat transfer coefficient due to radiation and convection to be constant at $h$ = 75 W/m²K.
+
+(b) How long does it take until the erinforcement reaches a temperature of 500°C. Assume the the total heat transfer coefficient to be infinitely large, i.e. the surface temperature, $T_0$ = $T_f$.
+
+(c) Estimate how long it takes untill the temperature 300 mm from the bottom of the slab, i.e. the upper surface of the slab, has risen by approximately 10°C (assuming that the slab is infinitely thick)?
+
+**Solution**
+
+(a) Assume the slab to be semi-infinite and apply
+
+$$
+\frac{T_s - T_i}{T_g - T_i} = 1 - e^{\tfrac{t}{\tau}}\left[ 1 - erf \left( \sqrt{\frac{t}{\tau}} \right) \right]
+$$
+
+where
+
+$$
+\frac{t}{\tau}=t^2\frac{t}{\lambda \rho c} = 75^2 \frac{10 \cdot 60}{1 \cdot 2300 \cdot 800} = 1.83
+$$
+
+By breaking out the surface temperature, $T_s$, from the equation, it can be calculated to $T_s$ = 593°C
+
+(b) Find the temperature, $T\left(x,t\right)$ = 500°C, at depth $x$ using
+
+$$
+\frac{T\left(x, t \right) - T_i}{T_s - T_i} = 1 - erf \left( \frac{x}{2 \sqrt{\alpha t}} \right)
+$$
+
+By calculating $\alpha$ as
+
+$$
+\alpha = \frac{\lambda}{c \rho} = \frac{1}{800 \cdot 2300} = 5.43 \cdot 10^{-7}
+$$
+
+and breaking out the error function as
+
+$$
+erf \left( \frac{x}{2 \sqrt{\alpha t}} \right) = 1 - \frac{T\left(x, t \right) - T_i}{T_s - T_i} = 0.545
+$$
+
+The inverse function of the error function can be found in tables (or by calculating the inverse error function) giving
+
+$$
+X = erf^{-1} \left( erf \left( \frac{x}{2 \sqrt{\alpha t}} \right)\right) = \frac{x}{2 \sqrt{\alpha t}} = 0.428
+$$
+
+Breaking out $t$ gives
+
+$$
+t = \left(\frac{x}{2 \sqrt{\alpha} X}\right)^2 = \left(\frac{0.03}{2 \sqrt{5.43 \cdot 10^{-7}} \cdot 0.428}\right)^2 = 2265\text{ }s
+$$
+
+(c) This can be calculated as above or simplified by assuming that the temperature rise, $\Delta T\left(x,t\right)$ = 10°C is approximately 1 % compared to the difference between the surface temperature (or fire temperature in this case), $T_s$ and the initial temperature, $T_i$. For this case, the time can be calculated based on the 1 % temperature penetration depth.
+
+$$
+\delta_{0.01} = 0.3 = 3.6 \sqrt{\alpha t}
+$$
+
+Breaking out $t$ gives 
+
+$$
+t = \frac{\left( \tfrac{x}{3.6}\right)^2}{\alpha} = \frac{\left( \tfrac{0.3}{3.6}\right)^2}{5.43 \cdot 10^{-7}} = 12 777\text{ }s
+$$
+
+or $\approx$ 3.5 h
+
