@@ -56,7 +56,7 @@ $$
 The heat exiting the steel can be described as
 
 $$
-\dot{q}_{out}^{''}=h\left(T_{\infty} - T_s) 
+\dot{q}_{out}^{''}=h\left(T_{\infty} - T_s \right) 
 $$
 
 These two are equal when $T_s$ = $T_s^{ult}$. This can be found by using 
